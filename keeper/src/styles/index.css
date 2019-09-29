@@ -41,6 +41,34 @@
   margin-left: 16%;
   display: inline-block;
 }
+.full{
+  animation-duration: .5s;
+  animation-name: fullscreen;
+  animation-fill-mode: forwards;
+  transform-origin: 100% 50%;
+}
+@keyframes fullscreen{
+  from{ 
+    transform: scaleX(.84); 
+  }
+  to{ 
+    transform : scaleX(1); 
+  }
+}
+.windowed{
+  animation-duration: .35s;
+  animation-name: shrink;
+  animation-fill-mode: forwards;
+  transform-origin: 100% 50%;
+}
+@keyframes shrink{
+  from{ 
+    transform: scaleX(1.16); 
+  }
+  to { 
+    transform : scaleX(1); 
+  }
+}
 .topbar{
   height: 50px;
 }
@@ -55,4 +83,30 @@
 }
 .bg-offwhite{
   background-color: #FBFAFB
+}
+.slide-l{
+  animation-duration: .5s;
+  animation-name: slide-left;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-left{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-20%);
+  }
+}
+.slide-r{
+  animation-duration: .35s;
+  animation-name: slide-right;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-right{
+  0%{
+    transform: translateX(-20%);
+  }
+  100%{
+    transform: translateX(0);
+  }
 }
