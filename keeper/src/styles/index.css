@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  overflow-x: hidden;
+}
 .ml-16p{
   margin: 16%;
 }
@@ -41,34 +44,6 @@
   margin-left: 16%;
   display: inline-block;
 }
-.full{
-  animation-duration: .5s;
-  animation-name: fullscreen;
-  animation-fill-mode: forwards;
-  transform-origin: 100% 50%;
-}
-@keyframes fullscreen{
-  from{ 
-    transform: scaleX(.84); 
-  }
-  to{ 
-    transform : scaleX(1); 
-  }
-}
-.windowed{
-  animation-duration: .35s;
-  animation-name: shrink;
-  animation-fill-mode: forwards;
-  transform-origin: 100% 50%;
-}
-@keyframes shrink{
-  from{ 
-    transform: scaleX(1.16); 
-  }
-  to { 
-    transform : scaleX(1); 
-  }
-}
 .topbar{
   height: 50px;
 }
@@ -84,8 +59,36 @@
 .bg-offwhite{
   background-color: #FBFAFB
 }
+.full{
+  animation-duration: .2s;
+  animation-name: fullscreen;
+  animation-fill-mode: forwards;
+  transform-origin: 100% 50%;
+}
+@keyframes fullscreen{
+  from{ 
+    transform: scaleX(.84); 
+  }
+  to{ 
+    transform : scaleX(1); 
+  }
+}
+.windowed{
+  animation-duration: .3s;
+  animation-name: shrink;
+  animation-fill-mode: forwards;
+  transform-origin: 100% 50%;
+}
+@keyframes shrink{
+  from{ 
+    transform: scaleX(1.16); 
+  }
+  to { 
+    transform : scaleX(1); 
+  }
+}
 .slide-l{
-  animation-duration: .5s;
+  animation-duration: .2s;
   animation-name: slide-left;
   animation-fill-mode: forwards;
 }
@@ -94,19 +97,70 @@
     transform: translateX(0);
   }
   100%{
-    transform: translateX(-20%);
+    transform: translateX(-100vw);
   }
 }
 .slide-r{
-  animation-duration: .35s;
+  animation-duration: .2s;
   animation-name: slide-right;
   animation-fill-mode: forwards;
 }
 @keyframes slide-right{
   0%{
-    transform: translateX(-20%);
+    transform: translateX(-100vw);
   }
   100%{
     transform: translateX(0);
+  }
+}
+.slid-out{
+  animation-duration: .3s;
+  animation-name: slide-out;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-out{
+  0%{
+    transform: translateX(0);
+    opacity: 1;
+    }
+  75%{
+    opacity: 0;
+    display: none;
+  }
+  100%{
+    transform: translateX(100vw);
+    position: absolute;
+  }
+}
+.slid-in{
+  animation-duration: .7s;
+  animation-name: slide-in;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-in{
+  0%{
+    transform: translateX(100vw);
+    position: absolute;
+    }
+  25%{
+    opacity: 0;
+    display: none;
+  }
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.topbar{
+  animation-duration: .7s;
+  animation-name: slide-down;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-down{
+  0%{
+    transform: translateY(-100vh);
+  }
+  100%{
+    transform: translateY(0);
   }
 }

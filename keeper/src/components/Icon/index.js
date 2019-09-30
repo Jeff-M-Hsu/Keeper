@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/tailwind.css';
 import Menu from '../../resources/icons/menu.png';
 import JeffHsu from '../../resources/img/JeffHsu.jpg';
 
