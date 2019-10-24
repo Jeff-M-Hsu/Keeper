@@ -3,21 +3,27 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "jhsu-components": "^1.0.9",
     "postcss": "^7.0.18",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
-    "react-scripts": "3.1.2",
+    "react-scripts": "^3.2.0",
     "tailwindcss": "^1.1.2"
   },
   "scripts": {
     "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
-    "start": "npm run build:style && react-scripts start",
+    "start": "run build:style && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
   },
   "browserslist": {
     "production": [
